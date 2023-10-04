@@ -1,0 +1,191 @@
+// Place your key bindings in this file to override the defaults
+[
+    // REPL Settings
+    {  
+        "key" : "f8",
+        "command" : "runCommands",
+        "when" : "!terminalFocus && resourceExtname == .sml && !isWindows",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.killAll",
+                "workbench.action.terminal.new",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text" : "cd ${relativeFileDirname} && sml\r"
+                    }
+                }
+                
+            ]
+        }
+    },
+    {  
+        "key" : "f8",
+        "command" : "runCommands",
+        "when" : "!terminalFocus && resourceExtname == .sml && isWindows",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.killAll",
+                "workbench.action.terminal.new",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text" : "cd ${relativeFileDirname}; sml\r"
+                    }
+                }
+                
+            ]
+        }
+    },
+    {  
+        "key" : "f8",
+        "command" : "runCommands",
+        "when" : "!terminalFocus && resourceExtname == .hs && !isWindows",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.killAll",
+                "workbench.action.terminal.new",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text" : "cd ${relativeFileDirname} && hugs\r"
+                    }
+                }
+                
+            ]
+        }
+    },
+    {  
+        "key" : "f8",
+        "command" : "runCommands",
+        "when" : "!terminalFocus && resourceExtname == .hs && isWindows",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.killAll",
+                "workbench.action.terminal.new",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text" : "cd ${relativeFileDirname}; hugs\r"
+                    }
+                }
+                
+            ]
+        }
+    },
+    {  
+        "key" : "f8",
+        "command" : "runCommands",
+        "when" : "!terminalFocus && resourceExtname == .lsp && !isWindows",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.killAll",
+                "workbench.action.terminal.new",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text" : "cd ${relativeFileDirname} && rlwrap sbcl\r"
+                    }
+                }
+                
+            ]
+        }
+    },
+    {  
+        "key" : "f8",
+        "command" : "runCommands",
+        "when" : "!terminalFocus && resourceExtname == .lsp && isWindows",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.killAll",
+                "workbench.action.terminal.new",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text" : "cd ${relativeFileDirname}; sbcl\r"
+                    }
+                }
+                
+            ]
+        }
+    },
+    {  
+        "key" : "f8",
+        "command" : "runCommands",
+        "when" : "!terminalFocus && resourceExtname == .rb && !isWindows",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.killAll",
+                "workbench.action.terminal.new",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text" : "cd ${relativeFileDirname} && irb\r"
+                    }
+                }
+                
+            ]
+        }
+    },
+    {  
+        "key" : "f8",
+        "command" : "runCommands",
+        "when" : "!terminalFocus && resourceExtname == .rb && isWindows",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.killAll",
+                "workbench.action.terminal.new",
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text" : "cd ${relativeFileDirname}; irb\r"
+                    }
+                }
+                
+            ]
+        }
+    },
+    {  
+        "key" : "f8",
+        "command" : "runCommands",
+        "when" : "terminalFocus && (resourceExtname == .sml || resourceExtname == .hs || resourceExtname == .lsp || resourceExtname == .rb)",
+        "args": {
+            "commands": [
+                "workbench.action.terminal.killAll"
+            ]
+  
+        }
+    },
+    {  
+        "key" : "f9",
+        "command" : "workbench.action.terminal.sendSequence",
+        "when" : "resourceExtname == .hs",
+        "args": {
+            "text" : ":load ${fileBasename}\r"
+        }
+    },
+    {  
+        "key" : "f9",
+        "command" : "workbench.action.terminal.sendSequence",
+        "when" : "resourceExtname == .sml",
+        "args": {
+            "text" : "use \"${fileBasename}\";\r"
+        }
+    },
+    {  
+        "key" : "f9",
+        "command" : "workbench.action.terminal.sendSequence",
+        "when" : "resourceExtname == .lsp",
+        "args": {
+            "text" : "(load \"${fileBasename}\")\r"
+        }
+    },
+    {  
+        "key" : "f9",
+        "command" : "workbench.action.terminal.sendSequence",
+        "when" : "resourceExtname == .rb",
+        "args": {
+            "text" : "source(\"${fileBasename}\")\r"
+        }
+    }
+  ]

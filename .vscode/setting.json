@@ -1,0 +1,29 @@
+{
+    "editor.fontSize": 14,
+    "terminal.integrated.fontSize": 15,
+    "editor.mouseWheelZoom": true,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "editor.bracketPairColorization.enabled": false,
+    "[haskell]":{
+      "editor.tabSize": 2
+    },
+    "[sml]":{
+      "editor.tabSize": 2
+    },
+    "[lisp]":{
+      "editor.tabSize": 2,
+      "editor.bracketPairColorization.enabled": true
+    },
+    "[ruby]":{
+      "editor.tabSize": 2
+    },
+    "[prolog]": {
+      "editor.tabSize": 2
+    },
+    "editor.renderWhitespace": "all",
+    "notebook.lineNumbers": "on",
+    "files.autoGuessEncoding": true
+  }
