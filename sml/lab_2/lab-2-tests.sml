@@ -155,11 +155,9 @@ val test4_envLookUp = envLookUp ([("b", INT 6), ("b", INT 10)], "b") = INT 6
 (****************************************************************************** 
   Задание 10 evalUnderEnv
  ******************************************************************************)
-(* Дефолтные *)
 val test1_evalUnderEnv = evalUnderEnv (VAR "a") [("a", INT 5)] = INT 5
 val test2_evalUnderEnv = evalUnderEnv (INT 5) [] = INT 5
 val test3_evalUnderEnv = evalUnderEnv NULL [] = NULL
-(* Из методички *)
 val test4_evalUnderEnv = evalUnderEnv (IF_GREATER (INT 4, INT 2, VAR "a", VAR "l")) [("a", INT 6), ("l", NULL)] = INT 6
 val test5_evalUnderEnv = evalUnderEnv (PAIR (VAR "a", VAR "l")) [("a", INT 6), ("l", NULL)] = PAIR (INT 6, NULL)
 val test6_evalUnderEnv = evalUnderEnv (ADD (INT 4, VAR "a")) [("a", INT 6), ("l", NULL)] = INT 10
@@ -169,7 +167,6 @@ val test9_evalUnderEnv = evalUnderEnv (IS_NULL (TAIL (PAIR (VAR "a", VAR "l"))))
 val test10_evalUnderEnv = evalUnderEnv (LET (("a", INT 7), ADD (VAR "b", VAR "a"))) [("a", INT 6), ("b", INT 10)] = INT 17
 val test11_evalUnderEnv = evalUnderEnv (FUN (("", "x"), ADD (VAR "a", VAR "x"))) [("a", INT 6), ("b", INT 10)] = CLOSURE ([("a", INT 6), ("b", INT 10)], FUN (("", "x"), ADD (VAR "a", VAR "x")))
 val test12_evalUnderEnv = evalUnderEnv (CALL (VAR "f", VAR "x")) [("x", INT 4), ("a", INT 8), ("f", CLOSURE ([("a", INT 6), ("x", INT 10)], FUN (("", "x"), ADD (VAR "a", VAR "x"))))] = INT 10
-(* Юнит *)
 val test13_evalUnderEnv = 
   evalUnderEnv (CLOSURE ([("a", INT 6), ("x", INT 10)], NULL)) []
     = CLOSURE ([("a", INT 6), ("x", INT 10)], NULL)
