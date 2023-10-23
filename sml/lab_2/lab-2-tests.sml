@@ -347,5 +347,5 @@ val test4_delDuplicates =
     ( CALL 
         ( delDuplicates
         , PAIR (INT 1, PAIR (INT 2, PAIR (INT 2, PAIR (INT 1, (PAIR (INT 2, PAIR (INT 3, NULL))))))) ) )
-  = PAIR (INT 1, PAIR (INT 2, PAIR (INT 1, PAIR (INT 2, PAIR (INT 3, NULL)))))
+  = PAIR (INT 1, PAIR (INT 2, PAIR (INT 1, PAIR (INT 2, PAIR (INT 3, NULL))))) 
 (******************************************************************************)
