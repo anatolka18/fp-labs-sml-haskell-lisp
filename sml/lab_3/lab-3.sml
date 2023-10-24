@@ -429,15 +429,11 @@ fun play (dsk, playCards) =
 fun execution d =
   let
     val plH :: _ = Desk.getPile d
-    val mNew = Desk.addMemo (d, PASS)
-  in case Desk.getState d
-       of EXECUTE => ( case plH
-                         of CRD (SKIP, _) => 
-                              nextPlayer (Desk.setState (mNew, PROCEED))
-                          | CRD (DRAW_TWO, _) =>
-                              nextPlayer (Desk.setState (drawTwo mNew, PROCEED))
-                          | _ => raise IllegalGame )
-        | _ => ( raise IllegalGame )
+    val mN = Desk.addMemo (d, PASS)
+  in case plH
+       of CRD (SKIP, _) => nextPlayer (Desk.setState (mN, PROCEED))
+        | CRD (DRAW_TWO, _) => nextPlayer (Desk.setState (drawTwo mN, PROCEED))
+        | _ => raise IllegalGame
   end
 (******************************************************************************)
 

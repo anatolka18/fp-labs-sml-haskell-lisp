@@ -579,6 +579,47 @@ val test28_execution1 =
     andalso null (Desk.getDeck newDsk)
     andalso Desk.getMemo newDsk = [PASS]
   end
+
+val test28_execution2 = 
+  let 
+    val dsk = Desk.make ( [ Player.make ( "Efim"
+                                      , []
+                                      , False.ownStrategy
+                                      , false
+                                      )
+                        , Player.make ( "Gerasim"
+                                      , []
+                                      , False.ownStrategy
+                                      , false
+                                      )
+                        , Player.make ( "Samuil"
+                                      , []
+                                      , False.ownStrategy
+                                      , false
+                                      )
+                        , Player.make ( "Erofei"
+                                      , []
+                                      , False.ownStrategy
+                                      , false
+                                      )
+                        ]
+                      , [ CRD (SKIP, GREEN) ]
+                      , []
+                      , PROCEED
+                      , CLOCKWISE
+                      , []
+                      )
+    val newDsk = execution dsk
+    val [plr1, plr2, plr3, plr4] = Desk.getPlayers newDsk
+  in
+    Player.getName plr1 = "Gerasim"
+    andalso Player.getName plr3 = "Erofei"
+    andalso cardSort (Player.getCards plr3) = []
+    andalso Desk.getState newDsk = PROCEED
+    andalso null (Desk.getDeck newDsk)
+    andalso Desk.getMemo newDsk = [PASS]
+    
+  end
 (******************************************************************************)
 
 (****************************************************************************** 
