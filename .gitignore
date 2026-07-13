@@ -1,0 +1,7 @@
+*.o
+*.hi
+*~
+*.sml~
+*.hs~
+*.lsp~
+.DS_Store
